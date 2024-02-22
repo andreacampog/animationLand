@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+
+    <style>
+
+        :root{
+            --azul:#CCEFFF;
+            --papaya:#FFF9DE;
+            --verde-oscuro:#5C8443;
+            --verde:#5C7543;
+
+        }
+        
+
+        body{
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;     
+            counter-reset: game;  
+
+
+        }
+        .phone{
+            width: 300px;
+            height: 600px;
+            position: relative;
+            border: 8px solid black;
+            border-radius: 40px;
+            background: var(--azul);
+            box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30);
+            box-shadow: 0 15px 12px rgba(0, 0, 0, 0.22);
+            overflow: hidden;
+        }
+
+        h1{
+            font-family: "Barriecito" , sans-serif;
+            text-align: center;
+            padding-top: 20px;
+            margin: 0 auto;            
+            font-size: 20px;
+            color: palevioletred;
+        }
+
+
+        .layer-1{
+            position: absolute;
+            z-index: 1;
+            width: 80px;
+            height: 450px;
+            bottom: 0;
+            right: 60px; 
+            animation-name: layer;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+
+          @keyframes layer{
+            0%{bottom: 0;}
+            25%{bottom:-80px;}
+            100%{bottom: 0;}
+
+        }
+
+        .layer-1 input[type=checkbox]{  
+            appearance: none;  
+            cursor: pointer;        
+            position: absolute;       
+            width: 80px;        
+            height: 50px;     
+            margin: 0;      
+            cursor: pointer;     
+            z-index: 2;            
+        }
+
+
+        
+        .layer-2 input[type=checkbox]{  
+            appearance: none;  
+            cursor: pointer;        
+            position: absolute;       
+            width: 80px;        
+            height: 50px;     
+            margin: 0;      
+            cursor: pointer;     
+            z-index: 2;            
+        }
+
+        .layer-4 input[type=checkbox]{  
+            appearance: none;  
+            cursor: pointer;        
+            position: absolute;       
+            width: 80px;        
+            height: 50px;     
+            margin: 0;      
+            cursor: pointer;     
+            z-index: 2;            
+        }
+
+        .layer-6 input[type=checkbox]{  
+            appearance: none;  
+            cursor: pointer;        
+            position: absolute;       
+            width: 80px;        
+            height: 50px;     
+            margin: 0;      
+            cursor: pointer;     
+            z-index: 2;            
+        }
+              
+
+        input[type=checkbox]:checked{
+            counter-increment: game;
+        }
+
+        .total-counter::after{
+            content: counter(game);
+        }
+     
+
+        .layer-2{
+            position: absolute;
+            z-index: 2;
+            width: 80px;
+            height: 450px;
+            bottom: 0;
+            left: 60px;
+            animation-name: layer;
+            animation-delay: 0.5s;
+            animation-duration: 1s;
+            animation-timing-function: ease/ease-out;
+            animation-iteration-count: infinite;
+
+        }
+
+
+        .layer-3{
+            position: absolute;
+            width: 200px;
+            z-index: 3;   
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+        }
+
+      
+
+
+        .layer-4{
+            position: absolute;
+            z-index: 4;
+            width: 80px;
+            height: 340px;
+            bottom: 0;
+            left: 10px;
+            animation-name: layer;
+            animation-delay: 0.5s;
+            animation-duration: 1s;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+
+        }
+
+
+        .layer-5{
+            position: absolute;
+            z-index: 5;
+            width: 200px;
+            height: 290px;
+            bottom: 0;
+            left: 0;
+
+        }
+
+
+
+        .layer-6{
+            position: absolute;
+            z-index: 6;
+            width: 80px;
+            height: 270px;  
+            bottom: 0;
+            right: 30px;
+            border-radius: 0 0 30px 0;
+            animation-name: layer;
+            animation-delay: 0.2s;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+            animation-iteration-count: infinite;
+
+        }
+
+        .layer-7{
+            position: absolute;
+            z-index: 7;
+            width: 160px;
+            height: 220px;
+            bottom: 0;
+            right: 0;
+
+        }
+
+
+        .layer-8{
+            position: absolute;
+            z-index: 8;
+            width: 120px;
+            height: 160px;
+            bottom: 0;
+            margin: 0 auto;
+            left: 0;
+            right: 0;      
+            background: var(--verde-oscuro);   
+            border-radius: 90% 90% 0 60%;   
+            box-shadow: 0px -1px 5px 1px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .layer-9{
+            position: absolute;
+            z-index: 8;
+            width: 150px;
+            height: 110px;
+            bottom: 0;    
+            left: 40px;      
+            background: var(--verde-oscuro);   
+            border-radius: 50% 90% 0 50px;  
+            box-shadow: -12px 1px 5px 1px rgba(0, 0, 0, 0.3);
+            
+        }  
+
+
+        .layer-10{
+            position: absolute;
+            z-index: 8;
+            width: 150px;
+            height: 110px;
+            bottom: 0;    
+            right: 40px;      
+            background: var(--verde-oscuro);   
+            border-radius: 90% 50% 50px 0; 
+            box-shadow: 12px 1px 5px 1px rgba(0, 0, 0, 0.3);  
+        }  
+
+        
+        .layer-11{
+            position: absolute;
+            z-index: 9;
+            width: 70px;
+            height: 110px;
+            bottom: 0; 
+            left: 0;      
+            background: var(--verde);
+            border-radius: 50px 50px 90% 50px;  
+            box-shadow: -2px -2px 6px 1px rgba(0, 0, 0, 0.3);   
+        }
+
+        .layer-12{
+            position: absolute;
+            z-index: 9;
+            width: 100px;
+            height: 80px;
+            bottom: 0;    
+            left: 20px;      
+            background: var(--verde);   
+            border-radius: 90% 100% 100% 10px;  
+        }  
+
+        .layer-13{
+            position: absolute;
+            z-index: 9;
+            width: 70px;
+            height: 120px;
+            bottom: 0; 
+            right: 0;            
+            background: var(--verde);   
+            border-radius: 50px 90% 50px  50px;   
+            box-shadow: 1px -1px 6px 1px rgba(0, 0, 0, 0.3); 
+        }
+
+        .layer-14{
+            position: absolute;
+            z-index: 9;
+            width: 100px;
+            height: 80px;
+            bottom: 0;    
+            right: 20px;      
+            background: var(--verde);   
+            border-radius: 90% 100% 50px 90%;            
+        }  
+
+        .left-ear-outter{
+            position: absolute;
+            background:white;
+            border-radius: 90%;
+            width: 20px;
+            height: 50px;
+            left: 10px;
+        }
+
+        .left-ear-inner{
+            position: absolute;
+            border-radius: 90%;
+            width: 10px;
+            height: 50px;
+            left: 15px;   
+            top: 8px; 
+            background: pink;
+        }
+
+        .right-ear-outter{
+            position: absolute;
+            background:white;
+            border-radius: 90%;
+            width: 20px;
+            height: 50px;
+            right: 10px;
+        }
+
+        .right-ear-inner{
+            position: absolute;
+            border-radius: 90%;
+            width: 10px;
+            height: 50px;
+            right: 15px;   
+            top: 8px; 
+            background: pink;
+        }
+
+        .head{
+            width: 100%;
+            background: white;
+            height: 80px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            position: absolute;
+            top: 30px;
+            border-radius: 50%;            
+        }
+
+        .head__eye{
+            width: 4px;
+            height: 4px;
+            background: gray;
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            animation-name:blink;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes blink{
+
+            0%{
+                transform: scaleY(1);
+
+            }
+
+            5%{ 
+                transform: scaleY(0.2);
+
+            }
+
+            10%{
+                transform: scaleY(1);             
+
+            }
+
+        }
+
+        .head__eye--left{
+            left:35px;
+        }
+
+        .head__eye--right{
+            right:35px;
+        }
+
+        .zig-zag{
+            width: auto;            
+            height: 400px;
+            background-color: #E2FFBC;
+            background-image: linear-gradient(135deg, #B0C594 25%, transparent 25%),
+                linear-gradient(225deg, #B0C594 25%, transparent 25%),
+                linear-gradient(135deg, #98A289 15%, transparent 30%),
+                linear-gradient(225deg, #98A289 15%, transparent 30%);
+            background-position: -30px 0, -30px 0, -30px 8px, -30px 8px;
+            background-size: 30px 60px;
+            background-repeat:repeat-x;
+            border-radius: 20px;
+            box-shadow: 1px -1px 6px 1px rgba(0, 0, 0, 0.3); 
+        }
+
+
+        
+    </style>
+</head>
+
+
+<body>
+    <div class="phone" >
+        <div class="layer-1"><!--conejo1-->      
+            <input type="checkbox">
+            <div class="left-ear-outter"></div>
+            <div class="left-ear-inner"></div>
+            <div class="right-ear-outter"></div>
+            <div class="right-ear-inner"></div>              
+            <div class="head">
+                <div class="head__eye head__eye--left"></div>
+                <div class="head__eye head__eye--right"></div>
+            </div>
+        </div> 
+        <div class="layer-2"><!--conejo2-->
+            <input type="checkbox">
+            <div class="left-ear-outter"></div>
+            <div class="left-ear-inner"></div>
+            <div class="right-ear-outter"></div>
+            <div class="right-ear-inner"></div>  
+            <div class="head" >
+                <div class="head__eye head__eye--left"></div>
+                <div class="head__eye head__eye--right"></div>
+            </div>            
+        </div>
+        <div class="layer-3">
+            <div class="zig-zag"></div>
+        </div>
+        <div class="layer-4"><!--conejo3-->
+            <input type="checkbox">
+            <div class="left-ear-outter"></div>
+            <div class="left-ear-inner"></div>
+            <div class="right-ear-outter"></div>
+            <div class="right-ear-inner"></div>  
+            <div class="head" >
+                <div class="head__eye head__eye--left"></div>
+                <div class="head__eye head__eye--right"></div>
+            </div>
+        </div>
+        <div class="layer-5">
+            <div class="zig-zag"></div>
+        </div>
+
+        <div class="layer-6"><!--conejo4-->
+            <input type="checkbox">
+            <div class="left-ear-outter"></div>
+            <div class="left-ear-inner"></div>
+            <div class="right-ear-outter"></div>
+            <div class="right-ear-inner"></div>  
+            <div class="head" >
+                <div class="head__eye head__eye--left"></div>
+                <div class="head__eye head__eye--right"></div>
+            </div>
+        </div>
+
+        <div class="layer-7">
+            <div class="layer-7-sub">
+                <div class="zig-zag"></div>
+            </div>
+        </div>
+        <div class="layer-8"></div>
+        <div class="layer-9"></div>
+        <div class="layer-10"></div>
+        <div class="layer-11"></div>
+        <div class="layer-12"></div>
+        <div class="layer-13"></div>
+        <div class="layer-14"></div>  
+        <h1>AnimationLand</h1>
+        <h1 class="total-counter" >Score: </h1>
+         
+
+    </div>    
+</body>
+</html>
+
+
+
